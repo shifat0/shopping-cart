@@ -3,6 +3,8 @@ let cartCount = document.querySelector(".cart-count");
 let cartItems = document.querySelector(".cart-items");
 let addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
 
+document.addEventListener("DOMContentLoaded", getFromStore);
+
 addToCartBtns.forEach((addToCartBtn) =>
   addToCartBtn.addEventListener("click", () => {
     let productPrice = addToCartBtn.parentNode
@@ -29,5 +31,21 @@ function addToStore(name, price) {
     productName: name,
     productPrice: price,
   });
+
   localStorage.setItem("cart", JSON.stringify(cartProducts));
+  location.reload();
+}
+
+function getFromStore() {
+  let cartProducts = store();
+  let count = cartProducts.length;
+  cartCount.innerHTML = `Product Count: ${count}`;
+
+  cartProducts.map((product) => {
+    cartItems.innerHTML += `
+    <li>
+    ${product.productName}, Price: ${product.productPrice}
+    <button style="background-color: red; color: white">Delete</button>
+    </li>`;
+  });
 }
