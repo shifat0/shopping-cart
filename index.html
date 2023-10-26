@@ -7,11 +7,81 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
             integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .main {
+                display: flex;
+                justify-content: space-between;
+                gap: 30px;
+                min-height: 100vh;
+            }
+
+            .border {
+                border-right: 1px solid gray;
+            }
+
+            .product-item {
+                border: 2px solid gray;
+                padding: 10px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .product-name {
+                color: green;
+            }
+
+            .product-details {
+                font-size: small;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        </style>
         <title>Shopping Cart</title>
     </head>
 
     <body>
-        <h1>Welcome to Shopping Cart</h1>
+        <div class="container main">
+            <div class="cart">
+                <h3>Cart</h3>
+                <span class="cart-count"></span>
+                <ol class="cart-items">
+                </ol>
+            </div>
+            <span class="border"></span>
+            <div class="products">
+                <h3>Products</h3>
+                <div class="product-item">
+                    <h5 class="product-name">I phone 15 Pro</h5>
+                    <div class="product-details">
+                        <span class="product-price">165000 BDT</span>
+                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <h5 class="product-name">Lenovo Ideapad Flex 5</h5>
+                    <div class="product-details">
+                        <span class="product-price">91500 BDT</span>
+                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <h5 class="product-name">Canon EOS 2000D DSLR</h5>
+                    <div class="product-details">
+                        <span class="product-price">35500 BDT</span>
+                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <h5 class="product-name">Intel 14th Gen core i5</h5>
+                    <div class="product-details">
+                        <span class="product-price">38500 BDT</span>
+                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="./js/script.js" />
     </body>
 
