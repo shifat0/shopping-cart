@@ -37,7 +37,13 @@
                 justify-content: space-between;
             }
 
-            .cart-count {
+            .cart {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cart-count,
+            .cart-total {
                 font-weight: bold;
             }
         </style>
@@ -49,8 +55,10 @@
             <div class="cart">
                 <h3>Cart</h3>
                 <span class="cart-count"></span>
+                <span class="cart-total"></span>
                 <ol id="cart-items" style="margin-top: 30px;">
                 </ol>
+                <button class="clear-cart">Clear Cart</button>
             </div>
             <span class="border"></span>
             <div class="products">
@@ -59,28 +67,28 @@
                     <h5 class="product-name">I phone 15 Pro</h5>
                     <div class="product-details">
                         <span class="product-price">165000 BDT</span>
-                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                        <button class="add-to-cart-btn button-primary" data-id="1">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-item">
                     <h5 class="product-name">Lenovo Ideapad Flex 5</h5>
                     <div class="product-details">
                         <span class="product-price">91500 BDT</span>
-                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                        <button class="add-to-cart-btn button-primary" data-id="2">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-item">
                     <h5 class="product-name">Canon EOS 2000D DSLR</h5>
                     <div class="product-details">
                         <span class="product-price">35500 BDT</span>
-                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                        <button class="add-to-cart-btn button-primary" data-id="3">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-item">
                     <h5 class="product-name">Intel 14th Gen core i5</h5>
                     <div class="product-details">
                         <span class="product-price">38500 BDT</span>
-                        <button class="add-to-cart-btn button-primary">Add to Cart</button>
+                        <button class="add-to-cart-btn button-primary" data-id="4">Add to Cart</button>
                     </div>
                 </div>
             </div>
