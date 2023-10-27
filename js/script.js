@@ -59,7 +59,7 @@ function addToStore(name, price, id) {
   // });
 
   localStorage.setItem("cart", JSON.stringify(cartProducts));
-  // location.reload();
+  location.reload();
 }
 
 function getFromStore() {
