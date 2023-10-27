@@ -79,8 +79,8 @@ function getFromStore() {
 
   for (let p in cartProducts) {
     let product = cartProducts[p];
-    cartCount.innerHTML = `Product Count: ${(count += product.quantity)}`;
-    cartTotal.innerHTML = `Total Price: ${(total +=
+    cartCount.innerHTML = `${(count += product.quantity)}`;
+    cartTotal.innerHTML = `${(total +=
       +product.productPrice * product.quantity)} BDT`;
     cartItems.innerHTML += `
      <li style="display: flex; align-items: center; justify-content: space-between">
