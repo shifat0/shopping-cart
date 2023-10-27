@@ -42,6 +42,7 @@ function addToStore(name, price, id) {
   //     }
   //   });
   // }
+
   if (id in cartProducts) {
     cartProducts[id].quantity++;
   } else {
@@ -52,6 +53,7 @@ function addToStore(name, price, id) {
     };
     cartProducts[id] = cart;
   }
+
   // cartProducts.push({
   //   productName: name,
   //   productPrice: price,
@@ -97,10 +99,20 @@ function removeFromStore(e) {
 
       let cartProducts = store();
 
-      cartProducts.map((p, i) => {
-        if (product.textContent.split(",")[0].trim() === p.productName.trim())
-          cartProducts.splice(i, 1);
-      });
+      // console.log(cartProducts);
+      for (let p in cartProducts) {
+        if (
+          cartProducts[p].productName ===
+          product.textContent.split(",")[0].trim()
+        )
+          delete cartProducts[p];
+      }
+
+      // Object.values(cartProducts).map((p, i) => {
+      //   if (product.textContent.split(",")[0].trim() === p.productName.trim())
+      //     cartProducts.splice(i, 1);
+      // });
+
       localStorage.setItem("cart", JSON.stringify(cartProducts));
       location.reload();
     }
